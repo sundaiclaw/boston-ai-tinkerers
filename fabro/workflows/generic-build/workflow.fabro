@@ -15,11 +15,11 @@ write files to the repo root.",
         retry_target="plan_fanout",
         fallback_retry_target="plan_fanout",
         model_stylesheet="
-            *          { model: claude-opus-4-6;   }
-            .code      { model: claude-sonnet-4-6; }
-            .review    { model: glm-4.7;           }
-            .cheap     { model: claude-haiku-4-5;  }
-            .plan-b    { model: glm-4.7;           }
+            *          { model: gpt-5.4;        }
+            .code      { model: gpt-5.3-codex;  }
+            .review    { model: gpt-5.4-mini;   }
+            .cheap     { model: gpt-5-mini;     }
+            .plan-b    { model: gpt-5-mini;     }
         "
     ]
 

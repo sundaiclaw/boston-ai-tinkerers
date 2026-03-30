@@ -1,0 +1,9 @@
+- [ ] 1. Refresh the seeded meetup experience
+  - [ ] 1.1 Expand Boston-specific copy, attendee context, and session detail
+  - [ ] 1.2 Improve the visual polish of the landing page
+- [ ] 2. Rebuild AI surfaces through the spec-driven workflow
+  - [ ] 2.1 Reconfirm the AI matcher behavior against richer meetup context
+  - [ ] 2.2 Reconfirm the idea generator behavior and output formatting
+- [ ] 3. Verify through Fabro and redeploy
+  - [ ] 3.1 Run Fabro generic-build validation and execution
+  - [ ] 3.2 Redeploy the app and resync the Sundai project

@@ -13,9 +13,14 @@
     <div class="shell">
       <header class="hero panel">
         <div>
-          <p class="eyebrow">Meetup copilot</p>
+          <p class="eyebrow">Boston builder meetup copilot</p>
           <h1>Boston AI Tinkerers</h1>
-          <p class="subcopy">A playful AI copilot for a fast-moving meetup: find the right sessions, meet the right people, and leave with something worth building.</p>
+          <p class="subcopy">Find the right demos, the right people, and the right after-meetup build idea before the night disappears.</p>
+          <div class="hero-meta">
+            <span id="venue-pill" class="pill">Kendall Square</span>
+            <span class="pill">Builders, demos, weird prototypes</span>
+            <span class="pill">AI-native networking</span>
+          </div>
         </div>
         <div class="hero-controls">
           <input id="goal-input" value="Meet people building practical local-first AI tools" />
@@ -23,14 +28,26 @@
         </div>
       </header>
 
+      <section class="info-strip panel">
+        <div>
+          <p class="strip-label">Venue</p>
+          <h2 id="venue-name">Cambridge Foundry</h2>
+          <p id="venue-blurb" class="strip-copy"></p>
+        </div>
+        <div>
+          <p class="strip-label">Tonight’s vibe</p>
+          <div id="sponsors" class="chip-row"></div>
+        </div>
+      </section>
+
       <main class="layout">
         <section class="column main-col">
           <section class="panel">
-            <div class="section-head"><h2>Tonight's flow</h2><span class="pill">Sample lineup</span></div>
+            <div class="section-head"><h2>Tonight's flow</h2><span id="session-count" class="pill">0 sessions</span></div>
             <div id="sessions" class="cards"></div>
           </section>
           <section class="panel">
-            <div class="section-head"><h2>People to meet</h2><span class="pill">Builders in the room</span></div>
+            <div class="section-head"><h2>People to meet</h2><span id="attendee-count" class="pill">0 attendees</span></div>
             <div id="attendees" class="cards"></div>
           </section>
         </section>
@@ -42,6 +59,14 @@
           <section class="panel">
             <div class="section-head"><h2>AI build ideas</h2><button id="generate-ideas">Generate ideas</button></div>
             <div id="ideas" class="empty">Use the meetup themes to spark a build challenge.</div>
+          </section>
+          <section class="panel small-panel">
+            <div class="section-head"><h2>Suggested prompts</h2><span class="pill">Try one</span></div>
+            <div class="chip-column">
+              <button class="prompt-chip" data-prompt="I want to meet people building local-first AI tools for real users">Local-first builders</button>
+              <button class="prompt-chip" data-prompt="I’m here for demos that could become startups">Startup-ish demos</button>
+              <button class="prompt-chip" data-prompt="Find me the best people for a post-meetup hack session">Afterparty collaborators</button>
+            </div>
           </section>
         </aside>
       </main>
