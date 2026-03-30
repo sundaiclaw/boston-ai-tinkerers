@@ -5,11 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "lint": "node --check server.js && node --check public/app.js",
-    "test": "node --test test/*.test.js"
+    "dev": "node --watch server.js",
+    "lint": "node scripts/lint.js",
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.1"
   }
 }

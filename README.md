@@ -1,36 +1,69 @@
 # Boston AI Tinkerers
 
-Boston AI Tinkerers is an AI meetup copilot that helps attendees find the right demos, discover who to talk to, and leave the event with something worth building.
+Boston AI Tinkerers is a single-page meetup copilot for a fictional-but-plausible Boston builder night. It helps visitors:
 
-## What it does
-- Shows a sample meetup agenda with demos and networking moments
-- Highlights attendee cards and what each person is looking for
-- Uses AI to recommend who to meet and which sessions to catch
-- Uses AI to generate build ideas tailored to the meetup vibe
+- explore a polished meetup landing page with schedule, demos, attendee context, and local identity
+- get AI-powered attendee/session recommendations for a specific goal
+- generate multiple meetup-relevant build ideas with concrete implementation angles
+- stay functional even without an OpenRouter key thanks to deterministic fallback behavior
 
-## How to Run (from zero)
-1. **Prerequisites**
-   - Node.js 22+
-   - An OpenRouter API key
-2. **Clone**
-   - `git clone https://github.com/sundaiclaw/boston-ai-tinkerers.git`
-3. **Enter the folder**
-   - `cd boston-ai-tinkerers`
-4. **Install dependencies**
-   - `npm install`
-5. **Set environment variables**
-   - `export OPENROUTER_API_KEY=your_key_here`
-   - `export OPENROUTER_BASE_URL=https://openrouter.ai/api/v1`
-   - `export OPENROUTER_MODEL=google/gemma-3-27b-it:free`
-6. **Run the app**
-   - `npm start`
-7. **Open locally**
-   - Visit `http://localhost:8080`
+## Stack
 
-## Limitations / known gaps
-- Meetup data is seeded rather than pulled from a real event backend
-- No attendee accounts, RSVPs, or persistence yet
-- AI recommendations are only as good as the seeded context and user prompt
+- Node.js 22+
+- Express 4
+- CommonJS modules
+- Bun for install / verify workflows
+- OpenRouter for optional AI completions
 
-Build on Sundai Club on March 30, 2026  
-Sundai Project: https://www.sundai.club/projects/f1fa0b6e-de7d-420c-84cf-7dcde8c19c65
+## Run locally
+
+1. Install dependencies:
+   - `bun install`
+2. Optional: copy env settings from `.env.example`
+3. Start the server:
+   - `bun run start`
+4. Open:
+   - `http://localhost:8080`
+5. Optional health check:
+   - `curl http://localhost:8080/healthz`
+
+If `OPENROUTER_API_KEY` is not set, the app still works in fallback mode for both AI features.
+
+## Environment variables
+
+- `PORT` (default: `8080`)
+- `OPENROUTER_API_KEY`
+- `OPENROUTER_BASE_URL` (default: `https://openrouter.ai/api/v1`)
+- `OPENROUTER_MODEL` (default: `google/gemma-3-27b-it:free`)
+- `OPENROUTER_SITE_NAME` (default: `Boston AI Tinkerers`)
+- `OPENROUTER_SITE_URL` (optional; sent as the OpenRouter referer header when provided)
+- `ALLOW_FALLBACK_AI` (default: `true`)
+
+## Verification
+
+Direct project checks:
+
+- `bun install`
+- `bun run lint`
+- `bun run test`
+- `bun run build`
+
+Fabro generic-build checks:
+
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/install-deps.sh`
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/lint.sh`
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/test.sh`
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/typecheck.sh`
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/build.sh`
+- `APP_DIR=. bash fabro/workflows/generic-build/scripts/format.sh`
+
+## Container build
+
+- `docker build -t boston-ai-tinkerers .`
+
+## Notes
+
+- Meetup content is seeded and intentionally richer than the original MVP so the AI features have better context.
+- There is no auth, persistence, or real event backend integration.
+- The UI and APIs are designed around the Boston AI Tinkerers meetup-discovery, matching, and idea-generation specs.
+- The SPA and API are intended to run on the same origin, so no permissive CORS policy is enabled by default.

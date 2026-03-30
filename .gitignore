@@ -1,5 +1,8 @@
-node_modules
+node_modules/
 .env
 .env.local
 .DS_Store
-coverage
+coverage/
+.tmp/
+.cache/
+.workflow/
