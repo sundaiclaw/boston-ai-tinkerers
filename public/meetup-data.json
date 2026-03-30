@@ -1,0 +1,19 @@
+{
+  "sessions": [
+    {"id":"s1","title":"Lightning demos","time":"6:30 PM","tag":"Show & tell","desc":"Five-minute demos from local builders shipping agents, copilots, and weird prototypes."},
+    {"id":"s2","title":"Open mic problem swap","time":"7:00 PM","tag":"Collaboration","desc":"Attendees pitch stuck points and recruit collaborators on the spot."},
+    {"id":"s3","title":"Local-first AI tools","time":"7:30 PM","tag":"Talk","desc":"A short talk on privacy-friendly workflows, local models, and practical deployment."},
+    {"id":"s4","title":"Project matchmaking","time":"8:00 PM","tag":"Networking","desc":"Structured networking for people who want to jam on ideas after the meetup."}
+  ],
+  "attendees": [
+    {"id":"a1","name":"Maya","focus":"Agent UX","lookingFor":"Frontend collaborator","project":"Voice-first debugging coach"},
+    {"id":"a2","name":"Theo","focus":"Local inference","lookingFor":"People testing edge-device AI","project":"Offline retrieval toolkit"},
+    {"id":"a3","name":"Priya","focus":"AI for science","lookingFor":"Product-minded tinkerer","project":"Lab note summarizer"},
+    {"id":"a4","name":"Jordan","focus":"Civic tech","lookingFor":"Design partner","project":"Neighborhood permit assistant"}
+  ],
+  "themes": [
+    "Local-first AI tools for communities",
+    "Meetup demos that turn into real products",
+    "Low-latency collaboration with agents"
+  ]
+}

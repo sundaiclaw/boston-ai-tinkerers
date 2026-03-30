@@ -1,0 +1,15 @@
+{
+  "name": "boston-ai-tinkerers",
+  "version": "1.0.0",
+  "description": "AI meetup copilot for Boston AI Tinkerers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "lint": "node --check server.js && node --check public/app.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boston AI Tinkerers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero panel">
+        <div>
+          <p class="eyebrow">Meetup copilot</p>
+          <h1>Boston AI Tinkerers</h1>
+          <p class="subcopy">A playful AI copilot for a fast-moving meetup: find the right sessions, meet the right people, and leave with something worth building.</p>
+        </div>
+        <div class="hero-controls">
+          <input id="goal-input" value="Meet people building practical local-first AI tools" />
+          <button id="find-match">Find my people</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="column main-col">
+          <section class="panel">
+            <div class="section-head"><h2>Tonight's flow</h2><span class="pill">Sample lineup</span></div>
+            <div id="sessions" class="cards"></div>
+          </section>
+          <section class="panel">
+            <div class="section-head"><h2>People to meet</h2><span class="pill">Builders in the room</span></div>
+            <div id="attendees" class="cards"></div>
+          </section>
+        </section>
+        <aside class="column side-col">
+          <section class="panel">
+            <div class="section-head"><h2>AI meetup matcher</h2><span id="model-pill" class="pill">Idle</span></div>
+            <div id="match-result" class="empty">Tell the copilot what you want out of the meetup.</div>
+          </section>
+          <section class="panel">
+            <div class="section-head"><h2>AI build ideas</h2><button id="generate-ideas">Generate ideas</button></div>
+            <div id="ideas" class="empty">Use the meetup themes to spark a build challenge.</div>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
