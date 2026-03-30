@@ -1,0 +1,4 @@
+- [ ] 1. Build landing page with meetup content
+- [ ] 2. Add AI meetup matcher
+- [ ] 3. Add AI build idea generator
+- [ ] 4. Deploy and publish on Sundai
